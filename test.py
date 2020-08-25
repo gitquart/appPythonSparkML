@@ -1,6 +1,7 @@
 import os
 from pyspark import SparkContext,SparkFiles,SQLContext
 from pyspark.sql import SQLContext, SparkSession
+#import pyspark_cassandra
 pathToHere=os.getcwd()
 
 #Complete command
@@ -11,8 +12,7 @@ def main():
    
     session = SparkSession.builder.appName('SparkCassandraApp').config('spark.cassandra.connection.config.cloud.path',os.getcwd()+'\\secure-connect-dbtest.zip').config('spark.cassandra.auth.username','test').config('spark.cassandra.auth.password','testquart').getOrCreate()
     sqlContext=SQLContext(session)
-    if sqlContext:
-        print('Good')
+    table_df = sqlContext.read.format("org.apache.spark.sql.cassandra").options(table='tbthesis', keyspace='test').load()
 
     session.stop()
     
