@@ -13,7 +13,7 @@ def main():
    
     
     secure_bundle_file=os.getcwd()+'\\secure-connect-dbtest.zip'
-    sparkSession = SparkSession.builder.appName('SparkCassandraApp').config('spark.cassandra.connection.config.cloud.path',secure_bundle_file).config('spark.cassandra.auth.username', 'test').config('spark.cassandra.auth.password','testquart').config('spark.dse.continuousPagingEnabled',False).master('local[*]').getOrCreate()
+    sparkSession = SparkSession.builder.appName('SparkCassandraApp').config('spark.cassandra.connection.config.cloud.path',secure_bundle_file).config('spark.cassandra.auth.username', 'test').config('spark.cassandra.auth.password','testquart').config('spark.dse.continuousPagingEnabled',False).master('local[*]').config("spark.jars.packages", "com.datastax.spark:spark-cassandra-connector_2.11:2.5.1").getOrCreate()
     #Until here is fine, the "reading" is failing
     data = sparkSession.read.format("org.apache.spark.sql.cassandra").options(table="tbthesis", keyspace="test").load()
     data.count()
