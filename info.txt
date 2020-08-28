@@ -1,0 +1,8 @@
+This are commands test 
+
+pyspark --packages com.datastax.spark:spark-cassandra-connector_2.11:2.5.1 --master local[*]
+
+Versión de conector que funcionó con Jesús: com.datastax.spark:spark-cassandra-connector_2.11:2.5.1
+Errors:
+
+Java gateway process exited before sending its port number
