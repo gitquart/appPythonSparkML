@@ -1,7 +1,7 @@
 import os
 from pyspark import SparkContext,SparkFiles,SQLContext
 from pyspark.sql import SQLContext, SparkSession
-from pyspark.sql.functions import col
+
 
 #querySt_1M="select * from test.tbthesis where period_number>4 ALLOW FILTERING "
 
