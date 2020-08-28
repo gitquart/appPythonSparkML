@@ -1,13 +1,16 @@
-This are commands test 
 
-pyspark --packages com.datastax.spark:spark-cassandra-connector_2.11:2.5.1 --master local[*]
-
-Versión de conector que funcionó con Jesús: com.datastax.spark:spark-cassandra-connector_2.11:2.5.1
+Versión de conector que funcionó con Jesús: 
+    pyspark --packages com.datastax.spark:spark-cassandra-connector_2.11:2.5.1 
 
 Errors:
 
-1) Java gateway process exited before sending its port number (can't download external jars)
+    1) Java gateway process exited before sending its port number (can't download external jars)
 
 Solution
 
-1) Erased content in C:\Users\UlysesRico\.ivy2 cache and jars folders
+    1) Erased content in C:\Users\UlysesRico\.ivy2 cache and jars folders
+
+Info:
+    pyspark shell is pyspark command
+    If the jars are not downloaded yet, use this line:
+        sparkSession = SparkSession.builder.appName('SparkCassandraApp').config('spark.cassandra.connection.config.cloud.path',secure_bundle_file).config('spark.cassandra.auth.username', 'test').config('spark.cassandra.auth.password','testquart').config('spark.dse.continuousPagingEnabled',False).config('spark.cassandra.connection.host','c58d5d9e-015a-4255-8f6c-05784a7c59ba-us-east1.db.astra.datastax.com').config("com.datastax.spark:spark-cassandra-connector_2.11:2.5.1").master('local[*]').getOrCreate()
