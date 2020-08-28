@@ -1,6 +1,7 @@
 
 Versión de conector que funcionó con Jesús: 
-    pyspark --packages com.datastax.spark:spark-cassandra-connector_2.11:2.5.1 
+    pyspark --packages com.datastax.spark:spark-cassandra-connector_2.11:2.5.1
+    pyspark --jars com.datastax.spark:spark-cassandra-connector_2.11:2.5.1 
 
 Errors:
 
