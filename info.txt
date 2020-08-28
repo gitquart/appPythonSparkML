@@ -3,6 +3,11 @@ This are commands test
 pyspark --packages com.datastax.spark:spark-cassandra-connector_2.11:2.5.1 --master local[*]
 
 Versión de conector que funcionó con Jesús: com.datastax.spark:spark-cassandra-connector_2.11:2.5.1
+
 Errors:
 
-Java gateway process exited before sending its port number
+1) Java gateway process exited before sending its port number (can't download external jars)
+
+Solution
+
+1) Erased content in C:\Users\UlysesRico\.ivy2 cache and jars folders
