@@ -1,11 +1,8 @@
+Conector correcto para mi versión de scala en spark 3.0.0:
 
-Versión de conector que funcionó con Jesús: 
-    pyspark --packages com.datastax.spark:spark-cassandra-connector_2.11:2.5.1
-    pyspark --jars com.datastax.spark:spark-cassandra-connector_2.11:2.5.1 
+--packages com.datastax.spark:spark-cassandra-connector_2.12:2.5.1
 
-Errors:
 
-    1) Java gateway process exited before sending its port number (can't download external jars)
 
 Solution
 
